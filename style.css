@@ -129,6 +129,12 @@ body {
   align-items: start;
   flex-direction: column;
 }
+.selected-b{
+    background-color: var(--Dark-Grayish-Magenta);
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
 .buyer-names{
   display: flex;
   justify-content: center;
