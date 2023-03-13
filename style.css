@@ -155,6 +155,8 @@ body {
 @media (min-width:400px){
   .container{
     display: grid;
+    place-content: center;
+    margin: 10%;
     grid-template-rows: 1fr 1fr ;
     grid-template-columns: 1fr 20px 1fr 20px 1fr;
   }
