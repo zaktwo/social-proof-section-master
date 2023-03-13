@@ -97,12 +97,28 @@ body {
 /**************************************
        Title and paragraph styles
 **************************************/
+.title{
 
+}
+.desciption{
+
+}
 
 /**************************************
             reviews styles
 **************************************/
-
+.stars{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1rem;
+   
+}
+.revie{
+    background-color: var(--Light-Grayish-Magenta);
+    margin-bottom: 1rem;
+}
 
 /**************************************
             Buyers styles
@@ -131,5 +147,5 @@ body {
             Media Querie styles
 **************************************/
 @media (min-width:400px){
-    
+
 }
