@@ -127,3 +127,9 @@ body {
     align-items: center;
     flex-direction: column;
 }
+/**************************************
+            Media Querie styles
+**************************************/
+@media (min-width:400px){
+    
+}
