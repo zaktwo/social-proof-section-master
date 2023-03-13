@@ -2,14 +2,14 @@
             Variables
 **************************************/
 :root {
---Very-Dark-Magenta: hsl(300, 43%, 22%);
---Soft-Pink: hsl(333, 80%, 67%);
+  --Very-Dark-Magenta: hsl(300, 43%, 22%);
+  --Soft-Pink: hsl(333, 80%, 67%);
 
---Dark-Grayish-Magenta: hsl(303, 10%, 53%);
---Light-Grayish-Magenta: hsl(300, 24%, 96%);
---White: hsl(0, 0%, 100%);
+  --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+  --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+  --White: hsl(0, 0%, 100%);
 
---font-familly-spartan :    'League Spartan', sans-serif;
+  --font-familly-spartan: "League Spartan", sans-serif;
 }
 /**************************************
             CSS Reset
@@ -79,11 +79,51 @@ h6 {
 /**************************************
             Shared CSS
 **************************************/
-body{
-    font-family: var(--font-familly-spartan);
-    font-size: 15px;
+body {
+  font-family: var(--font-familly-spartan);
+  font-size: 15px;
 }
 
 /**************************************
-            CSS Reset
+            Main styles
 **************************************/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/**************************************
+       Title and paragraph styles
+**************************************/
+
+
+/**************************************
+            reviews styles
+**************************************/
+
+
+/**************************************
+            Buyers styles
+**************************************/
+ .buyer-wrapper/*.selected-b*/ { 
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+.buyer-names{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.buyer-names > img{
+    border-radius: 50%;
+}
+.names{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
