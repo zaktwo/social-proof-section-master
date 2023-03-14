@@ -247,6 +247,7 @@ body {
     height: 100%;
     grid-template-areas: " alias-buyer1  alias-buyer2  alias-buyer3";
     column-gap: 2%;
+    
   }
   /**************************************************
                 Sub Grids
@@ -294,7 +295,8 @@ grid-area: alias-reviews-1;
   grid-area: alias-buyer2;
   align-self: center;
   justify-self: center;
-  transition: transform 0.5s
+  transition: transform 0.5s;
+  margin: 0;
  }
  .buyer2:hover{
   transform: translate(0 , -10%) ;
