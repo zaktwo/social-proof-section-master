@@ -97,98 +97,217 @@ body {
 /**************************************
        Title and paragraph styles
 **************************************/
-.title{
-
+.title {
 }
-.desciption{
-
+.desciption {
 }
 
 /**************************************
             reviews styles
 **************************************/
-.stars{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 1rem;
-   
+.stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1rem;
 }
-.revie{
-    background-color: var(--Light-Grayish-Magenta);
-    margin-bottom: 1rem;
+.revie {
+  background-color: var(--Light-Grayish-Magenta);
+  margin-bottom: 1rem;
 }
 
 /**************************************
             Buyers styles
 **************************************/
- .buyer-wrapper/*.selected-b*/ { 
+.buyer-wrapper/*.selected-b*/ {
   display: flex;
   justify-content: center;
   align-items: start;
   flex-direction: column;
 }
-.selected-b{
-    background-color: var(--Dark-Grayish-Magenta);
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
-    padding: 1rem;
+.selected-b {
+  background-color: var(--Dark-Grayish-Magenta);
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  padding: 2rem;
 }
-.buyer-names{
+.buyer-names {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
+  size: 0.9rem;
+  margin-bottom: 10px;
 }
-.buyer-names > img{
-    border-radius: 50%;
+.buyer-names > img {
+  border-radius: 50%;
+  width: 40px;
 }
-.names{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.names {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 10px;
 }
 /**************************************
             Media Querie styles
 **************************************/
-@media (min-width:400px){
+@media (min-width: 400px) {
+  /********************************************************
+
+  made a mistake here by not wraping html sections properly 
+  so i made another iteration to the first attempt to solve this project
+  i need to make every thing dispalyed as grid no flex box 
+  body need to be defined as grid
+  also container as grid 
+  the other section also grid
+  *********************************************************
+        REMEMBER ALWAYS DOCUMENT YOUR MISTAKES 
+        TO LEARN FROM THEM IN THE FUTURE
+  *********************************************************
   .container{
     display: grid;
     place-content: center;
     margin: 10%;
     grid-template-rows: 1fr 1fr ;
     grid-template-columns: 1fr 20px 1fr 20px 1fr;
-  ;}
+    grid-template-areas: 
+    " alias-intro alias-intro alias-intro alias-stars alias-stars"
+    "alias-buyer1 . alias-buyer2 . alias-buyer3";
+  }
 
   .intro{
-    display: subgrid;
-    grid-row-start: 1;
-    grid-row-end:2 ;
-    grid-column-start:1 ;
-    grid-column-end:4 ;
+    grid-area: alias-intro;
   }
   .stars{
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start:4 ;
-    grid-column-end: 6;
+    grid-area: alias-stars;
   }
-  .buyers{
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end:6 ;
-    display: flex;
-    column-gap: 20px;
-  }
-  .buyer1{
 
+
+  .buyer1{
+    grid-area: alias-buyer1;
+    justify-content: start;
+    align-self: start;
   }
   .buyer2{
-
+    grid-area: alias-buyer2;
+    justify-self: center;
+    align-self: center;
   }
   .buyer3{
+    grid-area: alias-buyer3;
+    justify-content: end;
+    align-items: end;
+  }*/
+
+  body {
+    display: grid;
+    
+    margin: 10%;
+  }
+  /*****************************************
+          Main Grid
+  *******************************************/
+  .container {
+    display: grid;
+    place-content: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      " alias-title alias-stars"
+      "alias-buyers alias-buyers";
+  }
+  .intro {
+    
+    grid-area: alias-title;
+  }
+  .stars{
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows: 40px 1fr 20px 1fr 20px 1fr 40px;
+    grid-area: alias-stars;
+    grid-template-areas: ". . ."
+    ". alias-reviews-1 . "
+    ". . ." 
+    ". alias-reviews-2 . "
+    ". . ."
+    ". alias-reviews-3 ."
+    ". . ."
+    ;
+    width: 100%;
+    height: 100%;
+  }
+  .main-buyers{
+    grid-area: alias-buyers;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr  1fr  1fr;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: " alias-buyer1  alias-buyer2  alias-buyer3";
+    column-gap: 2%;
+  }
+  /**************************************************
+                Sub Grids
+  ***************************************************/
+
+  /************* Stars Grid ********************/
+  .stars{
+    display: flex;
+   
+    flex-direction: column;
+  }
+  .reviews-1{
+grid-area: alias-reviews-1;
+  }
+  .reviews-2{
+    grid-area: alias-reviews-2;
+  }
+  .reviews-3{
+    grid-area: alias-reviews-3;
+  }
+  .stars-container{
+    display: flex;
+  }
+  .revie{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+    border-radius: 7px;
     
   }
+ /********************Buyers Grid******************/
+
+ .buyer1{
+  grid-area: alias-buyer1;
+  align-self: start;
+  justify-self: start;
+  transition: transform 0.5s
+ }
+ .buyer1:hover{
+  transform: translate(0 , -10%) ;
+ }
+ .buyer2{
+  grid-area: alias-buyer2;
+  align-self: center;
+  justify-self: center;
+  transition: transform 0.5s
+ }
+ .buyer2:hover{
+  transform: translate(0 , -10%) ;
+ }
+ .buyer3{
+  grid-area: alias-buyer3;
+  justify-self: end;
+  align-self: end;
+  margin: 0;
+  transition: transform 0.5s
+ }
+ .buyer3:hover{
+  transform: translate(0 , -10%) ;
+ }
+
 }
