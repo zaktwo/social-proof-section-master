@@ -92,29 +92,27 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: url(/images/bg-pattern-top-mobile.svg) left top no-repeat,
+    url(/images/bg-pattern-bottom-mobile.svg) right bottom no-repeat;
 }
 
 /**************************************
        Title and paragraph styles
 **************************************/
-.intro{
+.intro {
   text-align: center;
 }
 .title {
   color: var(--Very-Dark-Magenta);
   font-weight: 700;
   font-size: 3rem;
-  
-  line-height:3rem;
-  
 
+  line-height: 3rem;
 }
 .desciption {
   font-weight: 400;
   font-size: 1.2rem;
   color: var(--Dark-Grayish-Magenta);
- 
-
 }
 
 /**************************************
@@ -127,7 +125,7 @@ body {
   flex-direction: column;
   border-radius: 1rem;
 }
-.stars-container{
+.stars-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -136,6 +134,8 @@ body {
 .revie {
   background-color: var(--Light-Grayish-Magenta);
   margin-bottom: 1rem;
+  padding: 15px;
+  border-radius: 5px;
 }
 
 /**************************************
@@ -152,7 +152,6 @@ body {
   margin-bottom: 1rem;
   border-radius: 0.5rem;
   padding: 2rem;
-  
 }
 .buyer-names {
   display: flex;
@@ -172,24 +171,22 @@ body {
   flex-direction: column;
   margin-left: 10px;
 }
-.name-title{
+.name-title {
   color: var(--Light-Grayish-Magenta);
 }
-.verified{
+.verified {
   color: var(--Soft-Pink);
   font-weight: 400;
   align-self: start;
   justify-content: start;
 }
-.description-para{
-color: var(--Light-Grayish-Magenta);
-
-
+.description-para {
+  color: var(--Light-Grayish-Magenta);
 }
 /**************************************
             Media Querie styles
 **************************************/
-@media (min-width: 400px) {
+@media (min-width: 925px) {
   /********************************************************
 
   made a mistake here by not wraping html sections properly 
@@ -239,8 +236,11 @@ color: var(--Light-Grayish-Magenta);
 
   body {
     display: grid;
-
-   
+    background: url(/images/bg-pattern-top-desktop.svg) no-repeat scroll 0% 0%;
+    background: url(/images/bg-pattern-bottom-desktop.svg) no-repeat scroll 100%
+      100%;
+    width: 100%;
+    height: auto;
   }
   /*****************************************
           Main Grid
@@ -253,22 +253,30 @@ color: var(--Light-Grayish-Magenta);
     grid-template-areas:
       " alias-title alias-stars"
       "alias-buyers alias-buyers";
-      margin: 10%;
+    margin: 10%;
+    -webkit-box-shadow: 0px 0px 15px 8px #ababab;
+    box-shadow: 0px 0px 15px 8px #ababab;
+    border-radius: 5px;
+    padding: 80px;
+    background: url(/images/bg-pattern-top-desktop.svg),
+      url(/images/bg-pattern-bottom-desktop.svg);
+    background-position: left top, right bottom;
+    background-repeat: no-repeat, no-repeat;
   }
   .intro {
     display: grid;
     grid-area: alias-title;
     width: 100%;
     height: 100%;
-    grid-template-rows:  1fr 1fr;
-    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
       " alias-title "
       "alias-description ";
   }
   .stars {
     display: grid;
-    grid-area: alias-stars;  
+    grid-area: alias-stars;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
@@ -292,17 +300,17 @@ color: var(--Light-Grayish-Magenta);
                 Sub Grids
   ***************************************************/
   /************* Intro Grid ********************/
-  .title{
+  .title {
     grid-area: alias-title;
     color: var(--Very-Dark-Magenta);
     font-weight: 700;
     font-size: 3rem;
     margin-right: 35%;
-    line-height:3rem;
+    line-height: 3rem;
     margin-top: 40px;
-   text-align: start;
+    text-align: start;
   }
-  .desciption{
+  .desciption {
     grid-area: alias-description;
     font-weight: 400;
     font-size: 1.2rem;
@@ -311,7 +319,7 @@ color: var(--Light-Grayish-Magenta);
     text-align: start;
   }
   /************* Stars Grid ********************/
- 
+
   .reviews-1 {
     grid-area: alias-reviews-1;
     align-self: end;
@@ -321,7 +329,7 @@ color: var(--Light-Grayish-Magenta);
     margin-right: 120px;
     transition: transform 0.5s;
   }
-  .reviews-1:hover{
+  .reviews-1:hover {
     transform: translate(-10%, 0);
   }
   .reviews-2 {
@@ -332,7 +340,7 @@ color: var(--Light-Grayish-Magenta);
     margin-right: 60px;
     transition: transform 0.5s;
   }
-  .reviews-2:hover{
+  .reviews-2:hover {
     transform: translate(-10%, 0);
   }
   .reviews-3 {
@@ -342,7 +350,7 @@ color: var(--Light-Grayish-Magenta);
     width: 70%;
     transition: transform 0.5s;
   }
-  .reviews-3:hover{
+  .reviews-3:hover {
     transform: translate(-10%, 0);
   }
   .stars-container {
@@ -356,7 +364,7 @@ color: var(--Light-Grayish-Magenta);
     padding: 15px 20px;
     border-radius: 7px;
   }
-  .rating{
+  .rating {
     color: var(--Very-Dark-Magenta);
     font-weight: 700;
     margin-left: 10px;
