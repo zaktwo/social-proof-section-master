@@ -97,9 +97,24 @@ body {
 /**************************************
        Title and paragraph styles
 **************************************/
+.intro{
+  text-align: center;
+}
 .title {
+  color: var(--Very-Dark-Magenta);
+  font-weight: 700;
+  font-size: 3rem;
+  
+  line-height:3rem;
+  
+
 }
 .desciption {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--Dark-Grayish-Magenta);
+ 
+
 }
 
 /**************************************
@@ -111,6 +126,12 @@ body {
   align-items: center;
   flex-direction: column;
   border-radius: 1rem;
+}
+.stars-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .revie {
   background-color: var(--Light-Grayish-Magenta);
@@ -131,6 +152,7 @@ body {
   margin-bottom: 1rem;
   border-radius: 0.5rem;
   padding: 2rem;
+  
 }
 .buyer-names {
   display: flex;
@@ -218,7 +240,7 @@ color: var(--Light-Grayish-Magenta);
   body {
     display: grid;
 
-    margin: 10%;
+   
   }
   /*****************************************
           Main Grid
@@ -231,6 +253,7 @@ color: var(--Light-Grayish-Magenta);
     grid-template-areas:
       " alias-title alias-stars"
       "alias-buyers alias-buyers";
+      margin: 10%;
   }
   .intro {
     display: grid;
@@ -277,6 +300,7 @@ color: var(--Light-Grayish-Magenta);
     margin-right: 35%;
     line-height:3rem;
     margin-top: 40px;
+   text-align: start;
   }
   .desciption{
     grid-area: alias-description;
@@ -284,6 +308,7 @@ color: var(--Light-Grayish-Magenta);
     font-size: 1.2rem;
     color: var(--Dark-Grayish-Magenta);
     margin-right: 20%;
+    text-align: start;
   }
   /************* Stars Grid ********************/
  
